@@ -8,6 +8,7 @@
 </head>
 <body>
 리스트 페이지
+<a href="#">git merge test</a>
 
 </body>
 </html>
