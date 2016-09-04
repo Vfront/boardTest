@@ -8,12 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dh.controller.DhController;
 import js.controller.JsController;
 
 public class FrontController extends HttpServlet{
 	
 	
 	private JsController jsController;
+	private static DhController dhController;
 	
 	
 	@Override
@@ -24,6 +26,7 @@ public class FrontController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
 		master(req, resp);
 	}
 	
@@ -31,9 +34,11 @@ public class FrontController extends HttpServlet{
 	protected void master(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String uri = request.getRequestURI();
+		System.out.println("req uri ="+ uri);
 		String serv = request.getServletPath();
+		System.out.println("serv = "+ serv);
 		String pack = request.getContextPath();
-		
+		System.out.println("pack ="+ pack);
 		String works = uri.replaceAll(pack+serv+"/", "");
 		
 		String type = works.substring(0,works.lastIndexOf("/"));
@@ -44,27 +49,28 @@ public class FrontController extends HttpServlet{
 		
 		String nextUrl = "";
 		
-		/*
-		 * 
-		 * 본인 if-else 구역에 
-		 * 본인 컨트롤러 로 이동하는 구문 써넣으시면 되겠습니다 
-		 * 
-		 * 그 뒤 알아서 작업!!!
-		 */
 		
-		if(type.equals("js")){ //중서
+		if(type.equals("js")){ //以묒꽌
 			if(jsController == null){
 				jsController = new JsController();
 			}
 			
 			nextUrl = jsController.master(request, response, works);
-		}else if(type.equals("jh")){ //요한
+		}else if(type.equals("jh")){ //�슂�븳
 			
-		}else if(type.equals("dh")){ //도형
+		}else if(type.equals("dh")){ //�룄�삎
+			System.out.println(">>>type dh comp");
 			
-		}else if(type.equals("sy")){ //선영
+			if(dhController == null){
+				dhController = new DhController();
+			}
 			
-		}else if(type.equals("sh")){ //선하
+			nextUrl = dhController.master(request,response,works);
+			System.out.println("front cont :"+ nextUrl);
+			
+		}else if(type.equals("sy")){ //�꽑�쁺
+			
+		}else if(type.equals("sh")){ //�꽑�븯
 			
 		}
 		
