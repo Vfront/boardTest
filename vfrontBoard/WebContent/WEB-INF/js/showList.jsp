@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="/vfrontBoard/WEB-INF/jsFiles/jquery-1.7.2.min.js"></script>
 </head>
 <body>
 
@@ -16,25 +17,34 @@
 		<tr>
 			<th>글번호</th><th>글쓴이</th><th>제목</th><th>날짜</th>
 		</tr>
-		<c:forEach var="each" items="${ boardList }">
+		<c:forEach var="each" varStatus="i" items="${ boardList }">
 			<tr>
 				<td>${each.num }</td>
 				<td id="${each.num}" class="writer">${each.writer }</td>
-				<td>${each.title }</td>
+				<td><a onclick="showCont('${i.index}')">${each.title }</a></td>
 				<td>${each.regdate }</td>
 			</tr>
+				<tr style="display: none;"  class="showArea${ i.index }">
+					<td>${ each.contents }</td>				
+				</tr>
 		</c:forEach>
 	</table>
+	<div id="aa">zz</div>
 </div>
 <script type="text/javascript">
-	$(".writer").click(function(){
-		alert("aler");
-		var id = $(this).attr("id");
-		alert(id);
-	});
-	$("#di").click(function(){
+	$(".tit").click(function(){
 		alert("11");
 	});
+	$("#aa").click(function(){
+		alert('11');
+	});
+	
+	function showCont(i){
+		alert(i);
+		var name = ".showArea"+i;
+		$(name).attr('style', 'display: ;');
+		alert(i);
+	}
  </script>
 </body>
 </html>

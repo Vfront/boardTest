@@ -25,6 +25,7 @@ public class JsController {
 			request.setAttribute("boardList", boardList);
 			nextUrl = "/WEB-INF/js/showList.jsp";
 		}
+		
 		return nextUrl;
 	}
 
