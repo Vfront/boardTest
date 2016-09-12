@@ -10,12 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import dh.controller.DhController;
 import js.controller.JsController;
+import yh.controller.YhController;
 
 public class FrontController extends HttpServlet{
 	
 	
 	private JsController jsController;
 	private static DhController dhController;
+	private YhController yhController;
 	
 	
 	@Override
@@ -56,8 +58,11 @@ public class FrontController extends HttpServlet{
 			}
 			
 			nextUrl = jsController.master(request, response, works);
-		}else if(type.equals("jh")){ //�슂�븳
-			
+		}else if(type.equals("yh")){ //�슂�븳
+			if(yhController==null){
+				yhController = new YhController();
+			}
+			nextUrl = yhController.master(request,response,works);
 		}else if(type.equals("dh")){ //�룄�삎
 			System.out.println(">>>type dh comp");
 			
