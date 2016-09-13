@@ -44,6 +44,11 @@ public class JsService {
 		
 		return boardList;
 	}
+
+	public JsBoardDTO showDetail(int num) {
+		JsBoardDTO dto = dao.showDetail(con, num);
+		return dto;
+	}
 	
 	
 

@@ -28,7 +28,7 @@
 		
 		
 	 --%>
-	<a href="board.do/js/showList">중서</a>&nbsp;
+	<a href="/vfrontBoard/board.do/js/showList">중서</a>&nbsp;
 	<a href="board.do/jh/showList">요한</a>&nbsp;
 	<a href="vfrontBoard/board.do/dh/showList">도형</a>&nbsp;
 	<a href="board.do/sy/showList">선영</a>&nbsp;

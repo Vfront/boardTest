@@ -21,7 +21,8 @@
 			<tr>
 				<td>${each.num }</td>
 				<td id="${each.num}" class="writer">${each.writer }</td>
-				<td><a onclick="showCont('${i.index}')">${each.title }</a></td>
+<%-- 				<td><a onclick="showCont('${i.index}')">${each.title }</a></td> --%>
+				<td><a href="/vfrontBoard/board.do/js/detail?num=${ each.num }">${ each.title }</a></td>
 				<td>${each.regdate }</td>
 			</tr>
 				<tr style="display: none;"  class="showArea${ i.index }">

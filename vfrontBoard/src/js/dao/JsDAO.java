@@ -57,4 +57,30 @@ public class JsDAO {
 		return boardList;
 	}
 
+	public JsBoardDTO showDetail(Connection con, int num) {
+		JsBoardDTO dto = null;
+		try {
+			String sql = "select * from t_board where num=?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, num);
+			rs = ps.executeQuery();
+			
+			if(rs.next()){
+				dto = new JsBoardDTO();
+				dto.setNum(rs.getInt("num"));
+				dto.setWriter(rs.getString("writer"));
+				dto.setTitle(rs.getString("title"));
+				dto.setContents(rs.getString("contents"));
+				dto.setRegdate(rs.getDate("regdate"));
+				
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeAll(ps, rs);
+		}
+		return dto;
+	}
+
 }

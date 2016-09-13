@@ -24,6 +24,11 @@ public class JsController {
 			List<JsBoardDTO> boardList = service.showList();
 			request.setAttribute("boardList", boardList);
 			nextUrl = "/WEB-INF/js/showList.jsp";
+		}else if(works.equals("/detail")){
+			int num = Integer.parseInt(request.getParameter("num"));
+			JsBoardDTO dto = service.showDetail(num);
+			request.setAttribute("dto", dto);
+			nextUrl = "/WEB-INF/js/showDetail.jsp";
 		}
 		
 		return nextUrl;
