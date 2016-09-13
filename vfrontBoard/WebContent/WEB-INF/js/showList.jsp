@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/vfrontBoard/WEB-INF/jsFiles/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/vfrontBoard/WEB-INF/js_files/jquery-1.7.2.min.js"></script>
 </head>
 <body>
 
@@ -15,7 +15,7 @@
 <h2>게시판</h2>
 	<table border="1">
 		<tr>
-			<th>글번호</th><th>글쓴이</th><th>제목</th><th>날짜</th>
+			<th id="z">글번호</th><th>글쓴이</th><th>제목</th><th>날짜</th>
 		</tr>
 		<c:forEach var="each" varStatus="i" items="${ boardList }">
 			<tr>
@@ -32,18 +32,18 @@
 	<div id="aa">zz</div>
 </div>
 <script type="text/javascript">
-	$(".tit").click(function(){
-		alert("11");
-	});
-	$("#aa").click(function(){
-		alert('11');
+
+	$("#z").click(function(){
+		
+		alert("zz");
 	});
 	
+
 	function showCont(i){
 		alert(i);
 		var name = ".showArea"+i;
-		$(name).attr('style', 'display: ;');
-		alert(i);
+		$(name).slideDown(100);
+		alert(i+"ss");
 	}
  </script>
 </body>
