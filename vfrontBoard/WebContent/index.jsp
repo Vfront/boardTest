@@ -15,6 +15,7 @@
 
 <h2>visionary Frontier</h2>
 	
+	
 	<hr color="blue">
 	
 	<%-- 
