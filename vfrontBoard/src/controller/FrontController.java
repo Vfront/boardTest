@@ -56,7 +56,7 @@ public class FrontController extends HttpServlet{
 			if(jsController == null){
 				jsController = new JsController();
 			}
-			
+			System.out.println(request.getParameter("num"));
 			nextUrl = jsController.master(request, response, works);
 		}else if(type.equals("yh")){ //�슂�븳
 			if(yhController==null){

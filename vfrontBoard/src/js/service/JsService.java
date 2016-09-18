@@ -31,7 +31,8 @@ public class JsService {
 
 		try {
 			Context it = new InitialContext();
-			ds = (DataSource)it.lookup("java:/comp/env/jdbc/oracle");
+//			ds = (DataSource)it.lookup("java:/comp/env/jdbc/oracle");
+			ds = (DataSource)it.lookup("java:/OracleDS");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -42,6 +43,11 @@ public class JsService {
 		List<JsBoardDTO> boardList = dao.showList(con);
 		
 		return boardList;
+	}
+
+	public JsBoardDTO showDetail(int num) {
+		JsBoardDTO dto = dao.showDetail(con, num);
+		return dto;
 	}
 	
 	
