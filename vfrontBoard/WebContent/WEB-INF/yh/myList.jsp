@@ -12,7 +12,7 @@
 <tr><th>허접한 게시판 리스트 제목</th></tr>
 <c:forEach var="dto" items="${myList}">
 <tr>
-	<th><c:out value="${dto.title }"></c:out> </th>
+	<th><c:out value="${dto.title}"></c:out> </th>
 </tr>
 </c:forEach>
 </table>
