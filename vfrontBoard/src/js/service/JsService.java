@@ -31,8 +31,8 @@ public class JsService {
 
 		try {
 			Context it = new InitialContext();
-			ds = (DataSource)it.lookup("java:/comp/env/jdbc/oracle");
-//			ds = (DataSource)it.lookup("java:/OracleDS");
+//			ds = (DataSource)it.lookup("java:/comp/env/jdbc/oracle");
+			ds = (DataSource)it.lookup("java:/OracleDS");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
