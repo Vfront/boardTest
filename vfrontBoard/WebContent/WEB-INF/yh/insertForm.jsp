@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" %>	
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 			
@@ -59,6 +59,7 @@ ${num}
 0
 </c:otherwise>
 </c:choose>개의 게시물이 있네요.</h2>
+collaborator 테스트
 <a href="/vfrontBoard/board.do/yh/showList">게시물 리스트 보기</a>
 <hr>
 
@@ -78,4 +79,3 @@ ${num}
 
 </body>
 </html>
-
