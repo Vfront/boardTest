@@ -1,10 +1,9 @@
 package dh.controller;
 
 import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import dh.bean.DhBoardBean;
-import dh.service.DhService;
 
 public class DhController {
 
@@ -25,7 +24,7 @@ public class DhController {
 			request.setAttribute("boardList", boardList);
 			nextUrl = "/WEB-INF/dh/mainList.jsp";
 		
-		}//listpage º¸¿©ÁÖ±â(home)
+		}//listpage ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½(home)
 		
 		return nextUrl;
 	}
